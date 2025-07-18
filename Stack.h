@@ -17,6 +17,8 @@ namespace yc {
         void resize();
     public:
         Stack();
+        void operator=(const Stack<T>& other) = delete; // Disable copy assignment
+        Stack(const Stack<T>& other) = delete; // Disable copy constructor
         ~Stack();
         void push(const T& value);
         T pop();
