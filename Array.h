@@ -34,7 +34,7 @@ namespace yc {
             }
             return data[index];
         }
-         T& operator[](size_t index) const {
+        const T& operator[](size_t index) const {
             if(index >= N) {
                 throw std::out_of_range("Index out of bounds");
             }
