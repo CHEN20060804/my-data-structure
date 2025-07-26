@@ -8,4 +8,5 @@ add_executable(my_data_structure main.cpp
         Queue.h
         Array.h
         String.h
-        Vector.h)
+        Vector.h
+        Tree.h)
