@@ -8,6 +8,7 @@
 #include <stdexcept>
 
 namespace yc {
+
     template<typename T>
     class Stack {
     private:

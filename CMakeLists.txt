@@ -9,4 +9,5 @@ add_executable(my_data_structure main.cpp
         Array.h
         String.h
         Vector.h
-        Tree.h)
+        BinaryTree.h
+        BinarySearchTree.h)

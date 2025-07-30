@@ -2,16 +2,15 @@
 // Created by yyc08 on 25-7-24.
 //
 
-#ifndef TREE_H
-#define TREE_H
+#ifndef BINARYTREE_H
+#define BINARYTREE_H
 #include <iostream>
 #include <vector>
-#include <__msvc_ostream.hpp>
 
 namespace yc {
 
     template<typename T>
-    class Tree {
+    class BinaryTree {
     private:
         struct Node {
             T data;
@@ -76,18 +75,18 @@ namespace yc {
             visit(node);
         }
     public:
-        Tree() : root(nullptr) {}
-        explicit Tree(const std::vector<T> &o_data) : root(nullptr) {
+        BinaryTree() : root(nullptr) {}
+        explicit BinaryTree(const std::vector<T> &o_data) : root(nullptr) {
             for (size_t i = 0; i < o_data.size(); ++i) {
                 nodes.push_back(new Node(o_data[i]));
             }
             root = create_tree(0);
         }
-        Tree(const Tree&) = delete;
-        Tree(Tree&&) = delete;
-        Tree& operator=(const Tree&) = delete;
-        Tree& operator=(Tree&&) = delete;
-        ~Tree() {
+        BinaryTree(const BinaryTree&) = delete;
+        BinaryTree(BinaryTree&&) = delete;
+        BinaryTree& operator=(const BinaryTree&) = delete;
+        BinaryTree& operator=(BinaryTree&&) = delete;
+        ~BinaryTree() {
             destroy_tree(root);
         }
 
@@ -176,4 +175,4 @@ namespace yc {
 
 } // yc
 
-#endif //TREE_H
+#endif //BINARYTREE_H
