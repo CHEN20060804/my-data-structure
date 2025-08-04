@@ -32,7 +32,7 @@ namespace yc {
             return node;
         }
 
-        bool searchNode(Node* node, const T& value) {
+        bool searchNode(Node* node, const T& value) const {
             if (node == nullptr) {
                 return false;
             }
@@ -86,7 +86,7 @@ namespace yc {
             delete node;
         }
 
-        void in_order(Node* node) {
+        void in_order(Node* node) const {
             if (node == nullptr) {
                 return;
             }
@@ -106,7 +106,7 @@ namespace yc {
             root = insertNode(root, value);
         }
 
-        bool search(const T& value) {
+        bool search(const T& value) const {
             return searchNode(root, value);
         }
 
@@ -119,7 +119,7 @@ namespace yc {
             root = nullptr;
         }
 
-        void print_in_order() {
+        void print_in_order() const {
             in_order(root);
             std::cout << std::endl;
         }

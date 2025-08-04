@@ -150,22 +150,22 @@ namespace yc {
             nodes.pop_back();
         }
 
-        void print_in_preorder() {
+        void print_in_preorder() const {
             pre_order(root);
             std::cout << std::endl;
         }
 
-        void print_in_inorder() {
+        void print_in_inorder() const {
             in_order(root);
             std::cout << std::endl;
         }
 
-        void print_in_postorder() {
+        void print_in_postorder() const {
             post_order(root);
             std::cout << std::endl;
         }
 
-        void print_in_levelorder() {
+        void print_in_levelorder() const {
             for (auto& node : nodes) {
                 std::cout << node->data << ' ';
             }

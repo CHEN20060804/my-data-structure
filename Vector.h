@@ -97,6 +97,9 @@ namespace yc {
         T* getData() {
             return data;
         }
+        const T* getData() const {
+            return data;
+        }
 
         T& operator[](const size_t& index) {
             if (index >= size) {
@@ -136,15 +139,12 @@ namespace yc {
         T* begin() {
             return data;
         }
-
         T* end() {
             return data + size;
         }
-
         const T* begin() const {
             return data;
         }
-
         const T* end() const {
             return data + size;
         }
