@@ -11,4 +11,5 @@ add_executable(my_data_structure main.cpp
         Vector.h
         BinaryTree.h
         BinarySearchTree.h
-        GraphAdjMetrix.h)
+        GraphAdjMetrix.h
+        GraphAdjList.h)

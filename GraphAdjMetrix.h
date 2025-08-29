@@ -51,7 +51,7 @@ public:
         adjMatrix[src][dest] = INF;
     }
 
-    void print_matrix() const {
+    void print_graph() const {
         for (int i = 0; i < vertices; i++) {
             for (int j = 0; j < vertices; j++) {
                 std::cout << adjMatrix[i][j] << " ";
