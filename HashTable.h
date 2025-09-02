@@ -68,6 +68,21 @@ namespace yc {
             table[index] = newNode;
         }
 
+        ValueType& operator[](const KeyType &k) {
+            size_t index = hash(k);
+            HashNode* curr = table[index];
+            while (curr != nullptr) {
+                if (curr->key == k) {
+                    return curr->value;
+                }
+                curr = curr->next;
+            }
+            HashNode* newNode = new HashNode(k, ValueType{});
+            newNode->next = table[index];
+            table[index] = newNode;
+            return newNode->value;
+        }
+
         void remove(const KeyType &k) {
             size_t index = hash(k);
             if (table[index] == nullptr) {
