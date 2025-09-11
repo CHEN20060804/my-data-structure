@@ -20,7 +20,7 @@ namespace yc {
 
         String() : str(new char[1]{'\0'}), length(0) {}
 
-        explicit String(const char* s) : length(s ? strlen(s) : 0) {
+        String(const char* s) : length(s ? strlen(s) : 0) {
             if (!s) {
                 str = new char[1]{'\0'};
             } else {
@@ -76,14 +76,19 @@ namespace yc {
         }
 
         String operator+(const String& other) const {
-            size_t newLength = other.length + length;
-            char* newStr = new char[newLength + 1];
-            strcpy(newStr, str);
-            strcat(newStr, other.str);
-            String result(newStr);
-            delete[] newStr;
-            return result;
+            String result;
+            result.length = length + other.length;
+            result.str = new char[result.length + 1];
+            strcpy(result.str, str);
+            strcat(result.str, other.str);
+            return result;  // 只复制一次
         }
+
+        String& operator+=(const String& other) {
+            *this = *this + other; // 使用已有的 + 运算符
+            return *this;
+        }
+
 
         friend std::ostream& operator<<(std::ostream& os, const String& s) {
             os << s.str;
